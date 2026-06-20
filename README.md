@@ -12,8 +12,9 @@ Forecast any time series with Google's [TimesFM](https://github.com/google-resea
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | ---------------------------------------------- | ---------------------------- | ----------- |
 |    [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/philogicae/timesfm_notebooks/blob/main/timesfm.ipynb)     | [`timesfm.ipynb`](timesfm.ipynb)               | noisy sine + sawtooth        | 12          |
 | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/philogicae/timesfm_notebooks/blob/main/timesfm_crypto.ipynb) | [`timesfm_crypto.ipynb`](timesfm_crypto.ipynb) | `BTC` / `ETH` via `yfinance` | 250 (~750d) |
+| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/philogicae/timesfm_notebooks/blob/main/timesfm_weather.ipynb) | [`timesfm_weather.ipynb`](timesfm_weather.ipynb) | temperature via Open-Meteo | 254 (~10.5d) |
 
-Both share the same 22-cell pipeline (**Global** · **Data** · **Execution**) — only the Data section differs. The template uses an identity transform; the crypto notebook uses residual-space (`Signal = log_return / vol`, `to_levels = last * exp(cumsum(fcst * vol))`).
+All share the same 22-cell pipeline (**Global** · **Data** · **Execution**) — only the Data section differs. The template uses an identity transform; the crypto notebook uses residual-space (`Signal = log_return / vol`, `to_levels = last * exp(cumsum(fcst * vol))`); the weather notebook uses an identity transform on raw temperatures.
 
 ---
 
